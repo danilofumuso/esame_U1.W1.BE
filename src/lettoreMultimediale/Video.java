@@ -6,7 +6,7 @@ public class Video extends ElementoMultimediale implements IPlayable, ILuminosit
     private int luminosita;
 
     public Video(String titolo, int durata) {
-        super(titolo,FileMultimediale.VIDEO);
+        super(titolo, FileMultimediale.VIDEO);
         this.durata = durata;
         this.volume = 3;
         this.luminosita = 5;
@@ -59,20 +59,25 @@ public class Video extends ElementoMultimediale implements IPlayable, ILuminosit
 
     @Override
     public void play() {
-        StringBuilder puntoEsclamativo = new StringBuilder();
-        for (int i = 0; i < volume; i++) {
-            puntoEsclamativo.append("!");
+        if (durata > 0) {
+            StringBuilder puntoEsclamativo = new StringBuilder();
+            for (int i = 0; i < volume; i++) {
+                puntoEsclamativo.append("!");
 
+            }
+
+            StringBuilder asterisco = new StringBuilder();
+            for (int i = 0; i < luminosita; i++) {
+                asterisco.append("*");
+            }
+
+            for (int i = 0; i < durata; i++) {
+                System.out.println(this.getTitolo() + puntoEsclamativo + asterisco);
+            }
+        } else {
+            System.out.println("Questo elemento multimediale non ha una durata!");
         }
 
-        StringBuilder asterisco = new StringBuilder();
-        for (int i = 0; i < luminosita; i++) {
-            asterisco.append("*");
-        }
-
-        for (int i = 0; i < durata; i++) {
-            System.out.println(this.getTitolo() + puntoEsclamativo + asterisco);
-        }
     }
 
     @Override

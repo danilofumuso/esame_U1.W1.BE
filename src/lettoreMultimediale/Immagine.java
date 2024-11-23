@@ -43,4 +43,5 @@ public class Immagine extends ElementoMultimediale implements ILuminosita {
     public void esegui() {
         show();
     }
+
 }

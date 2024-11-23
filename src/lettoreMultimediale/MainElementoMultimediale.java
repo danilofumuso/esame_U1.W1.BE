@@ -95,7 +95,7 @@ public class MainElementoMultimediale {
         //Ciclo per stampare l'elemento riprodotto
 
         while (true) {
-            System.out.println("Inserisci un numero da 1 a 5 per riprodurre, 0 per terminare!");
+            System.out.println("Inserisci il numero dell'elemento della lista per riprodurlo, 0 per terminare!");
             int riprodotto = scanner.nextInt();
 
             if (riprodotto > elementi.size()) {

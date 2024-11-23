@@ -5,7 +5,7 @@ public class RegistrazioneAudio extends ElementoMultimediale implements IPlayabl
     private int volume;
 
     public RegistrazioneAudio(String titolo, int durata) {
-        super(titolo,FileMultimediale.AUDIO);
+        super(titolo, FileMultimediale.AUDIO);
         this.durata = durata;
         this.volume = 3;
     }
@@ -34,13 +34,17 @@ public class RegistrazioneAudio extends ElementoMultimediale implements IPlayabl
 
     @Override
     public void play() {
-        StringBuilder puntoEsclamativo = new StringBuilder();
-        for (int i = 0; i < volume; i++) {
-            puntoEsclamativo.append("!");
-        }
+        if (durata > 0) {
+            StringBuilder puntoEsclamativo = new StringBuilder();
+            for (int i = 0; i < volume; i++) {
+                puntoEsclamativo.append("!");
+            }
 
-        for (int i = 0; i < durata; i++) {
-            System.out.println(this.getTitolo() + puntoEsclamativo);
+            for (int i = 0; i < durata; i++) {
+                System.out.println(this.getTitolo() + puntoEsclamativo);
+            }
+        }else{
+            System.out.println("Questo elemento multimediale non ha una durata!");
         }
 
     }
